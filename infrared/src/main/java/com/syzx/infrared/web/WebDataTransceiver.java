@@ -25,7 +25,6 @@ public class WebDataTransceiver implements IWebDataTransceiver {
      * TODO 简单描述该方法的实现功能（可选）.
      * @see com.syzx.infrared.web.interfaces.IWebDataTransceiver#GetData(java.lang.String)
      */
-    @Override
     public String GetData(String url) {
         
         // TODO Auto-generated method stub

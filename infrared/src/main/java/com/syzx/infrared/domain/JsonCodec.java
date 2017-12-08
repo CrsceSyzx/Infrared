@@ -7,6 +7,8 @@
  *
  */
 package com.syzx.infrared.domain;
+import com.alibaba.fastjson.JSONObject;
+import com.syzx.infrared.domain.entities.JsonTopClass;
 
 /**
  * ClassName: JsonCodec <br/>
@@ -18,6 +20,9 @@ package com.syzx.infrared.domain;
  * @since JDK 1.8
  */
 public class JsonCodec {
-
+    
+    public static JsonTopClass toObject(String jsonString) {
+        return JSONObject.parseObject(jsonString, JsonTopClass.class);
+    }
 }
 
