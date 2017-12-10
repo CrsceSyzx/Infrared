@@ -8,6 +8,8 @@
  */
 package com.syzx.infrared.service.interfaces;
 
+import java.nio.charset.Charset;
+
 /**
  * ClassName: IDataConverter <br/>
  * Function: TODO 描述类的功能. <br/>
@@ -19,5 +21,8 @@ package com.syzx.infrared.service.interfaces;
  */
 public interface IDataConverter {
     public String convertToString(byte[] data);
-}
 
+    public String convertToString(byte[] data, String charSet);
+    
+    public String convertToString(byte[] data, Charset charSet);
+}

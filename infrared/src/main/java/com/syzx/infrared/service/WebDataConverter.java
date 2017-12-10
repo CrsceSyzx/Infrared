@@ -10,6 +10,7 @@ package com.syzx.infrared.service;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
+import java.nio.charset.UnsupportedCharsetException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -35,7 +36,7 @@ public class WebDataConverter implements IDataConverter {
     public String convertToString(byte[] data) {
         String charSetString = null;
         //以默认字符集解码
-        String result = Charset.defaultCharset().decode(ByteBuffer.wrap(data)).toString();
+        String result = convertToString(data, Charset.defaultCharset());
 
         Matcher matcher = Pattern.compile(CHARSET_REGULAR).matcher(result);
         if (matcher.find()) {
@@ -44,9 +45,29 @@ public class WebDataConverter implements IDataConverter {
         }
         //若默认字符集与真实的不一致，则重新解码
         if (!"".equals(charSetString) && !Charset.defaultCharset().equals(Charset.forName(charSetString))) {
-            result = Charset.forName(charSetString).decode(ByteBuffer.wrap(data)).toString();
+            result = convertToString(data, charSetString);
         }
         return result;
+    }
+
+    /**
+     * TODO 简单描述该方法的实现功能（可选）.
+     * @see com.syzx.infrared.service.interfaces.IDataConverter#convertToString(byte[], java.lang.String)
+     */
+    public String convertToString(byte[] data, String charSet) {
+        if (Charset.isSupported(charSet)) {
+            return convertToString(data, Charset.forName(charSet));
+        }
+
+        throw new UnsupportedCharsetException(charSet);
+    }
+
+    /**
+     * TODO 简单描述该方法的实现功能（可选）.
+     * @see com.syzx.infrared.service.interfaces.IDataConverter#convertToString(byte[], java.nio.charset.Charset)
+     */
+    public String convertToString(byte[] data, Charset charSet) {
+        return charSet.decode(ByteBuffer.wrap(data)).toString();
     }
 
 }
