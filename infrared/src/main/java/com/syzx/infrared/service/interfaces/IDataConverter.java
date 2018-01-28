@@ -23,6 +23,6 @@ public interface IDataConverter {
     public String convertToString(byte[] data);
 
     public String convertToString(byte[] data, String charSet);
-    
+
     public String convertToString(byte[] data, Charset charSet);
 }

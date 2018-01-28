@@ -1,7 +1,5 @@
-/**
-  * Copyright 2017 bejson.com 
-  */
 package com.syzx.infrared.domain.entities;
+
 import java.util.List;
 
 /**
@@ -14,18 +12,21 @@ public class Config {
 
     private List<PortConfig> ports;
     private int mappingMode;
+
     public void setPorts(List<PortConfig> ports) {
-         this.ports = ports;
-     }
-     public List<PortConfig> getPorts() {
-         return ports;
-     }
+        this.ports = ports;
+    }
+
+    public List<PortConfig> getPorts() {
+        return ports;
+    }
 
     public void setMappingMode(int mappingMode) {
-         this.mappingMode = mappingMode;
-     }
-     public int getMappingMode() {
-         return mappingMode;
-     }
+        this.mappingMode = mappingMode;
+    }
+
+    public int getMappingMode() {
+        return mappingMode;
+    }
 
 }

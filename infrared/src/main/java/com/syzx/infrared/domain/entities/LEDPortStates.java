@@ -1,6 +1,3 @@
-/**
-  * Copyright 2017 bejson.com 
-  */
 package com.syzx.infrared.domain.entities;
 
 /**
@@ -13,18 +10,21 @@ public class LEDPortStates {
 
     private int iol;
     private int dia;
+
     public void setIol(int iol) {
-         this.iol = iol;
-     }
-     public int getIol() {
-         return iol;
-     }
+        this.iol = iol;
+    }
+
+    public int getIol() {
+        return iol;
+    }
 
     public void setDia(int dia) {
-         this.dia = dia;
-     }
-     public int getDia() {
-         return dia;
-     }
+        this.dia = dia;
+    }
+
+    public int getDia() {
+        return dia;
+    }
 
 }

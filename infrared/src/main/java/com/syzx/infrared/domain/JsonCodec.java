@@ -7,8 +7,10 @@
  *
  */
 package com.syzx.infrared.domain;
+
 import com.alibaba.fastjson.JSONObject;
-import com.syzx.infrared.domain.entities.JsonTopClass;
+import com.syzx.infrared.domain.dto.DataFrame;
+import com.syzx.infrared.domain.entities.InfraredSourceData;
 
 /**
  * ClassName: JsonCodec <br/>
@@ -20,9 +22,16 @@ import com.syzx.infrared.domain.entities.JsonTopClass;
  * @since JDK 1.8
  */
 public class JsonCodec {
-    
-    public static JsonTopClass toObject(String jsonString) {
-        return JSONObject.parseObject(jsonString, JsonTopClass.class);
+
+    public static String toString(Object object) {
+        return JSONObject.toJSONString(object);
+    }
+
+    public static InfraredSourceData toInfraredSourceData(String jsonString) {
+        return JSONObject.parseObject(jsonString, InfraredSourceData.class);
+    }
+
+    public static DataFrame toDataFrame(String jsonString) {
+        return JSONObject.parseObject(jsonString, DataFrame.class);
     }
 }
-

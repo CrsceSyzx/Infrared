@@ -1,11 +1,3 @@
-/**
- * Project Name:Infrared
- * File Name:PortConfig.java
- * Package Name:com.syzx.infrared.domain.entities
- * Date:2017年12月8日下午1:28:06
- * Copyright (c) 2017, syzx.com All Rights Reserved.
- *
- */
 package com.syzx.infrared.domain.entities;
 
 /**
@@ -25,6 +17,7 @@ public class PortConfig {
     private int aux;
     private boolean logic_4;
     private boolean logic_2;
+
     /**
      * iolconfig.
      *
@@ -34,6 +27,7 @@ public class PortConfig {
     public int getIolconfig() {
         return iolconfig;
     }
+
     /**
      * iolconfig.
      *
@@ -43,6 +37,7 @@ public class PortConfig {
     public void setIolconfig(int iolconfig) {
         this.iolconfig = iolconfig;
     }
+
     /**
      * inlen.
      *
@@ -52,6 +47,7 @@ public class PortConfig {
     public int getInlen() {
         return inlen;
     }
+
     /**
      * inlen.
      *
@@ -61,6 +57,7 @@ public class PortConfig {
     public void setInlen(int inlen) {
         this.inlen = inlen;
     }
+
     /**
      * outlen.
      *
@@ -70,6 +67,7 @@ public class PortConfig {
     public int getOutlen() {
         return outlen;
     }
+
     /**
      * outlen.
      *
@@ -79,6 +77,7 @@ public class PortConfig {
     public void setOutlen(int outlen) {
         this.outlen = outlen;
     }
+
     /**
      * comm.
      *
@@ -88,6 +87,7 @@ public class PortConfig {
     public int getComm() {
         return comm;
     }
+
     /**
      * comm.
      *
@@ -97,6 +97,7 @@ public class PortConfig {
     public void setComm(int comm) {
         this.comm = comm;
     }
+
     /**
      * aux.
      *
@@ -106,6 +107,7 @@ public class PortConfig {
     public int getAux() {
         return aux;
     }
+
     /**
      * aux.
      *
@@ -115,6 +117,7 @@ public class PortConfig {
     public void setAux(int aux) {
         this.aux = aux;
     }
+
     /**
      * logic_4.
      *
@@ -124,6 +127,7 @@ public class PortConfig {
     public boolean isLogic_4() {
         return logic_4;
     }
+
     /**
      * logic_4.
      *
@@ -133,6 +137,7 @@ public class PortConfig {
     public void setLogic_4(boolean logic_4) {
         this.logic_4 = logic_4;
     }
+
     /**
      * logic_2.
      *
@@ -142,6 +147,7 @@ public class PortConfig {
     public boolean isLogic_2() {
         return logic_2;
     }
+
     /**
      * logic_2.
      *
@@ -151,7 +157,5 @@ public class PortConfig {
     public void setLogic_2(boolean logic_2) {
         this.logic_2 = logic_2;
     }
-    
-    
-}
 
+}

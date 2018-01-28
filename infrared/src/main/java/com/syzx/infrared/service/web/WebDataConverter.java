@@ -6,7 +6,7 @@
  * Copyright (c) 2017, syzx.com All Rights Reserved.
  *
  */
-package com.syzx.infrared.service;
+package com.syzx.infrared.service.web;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
@@ -44,7 +44,8 @@ public class WebDataConverter implements IDataConverter {
             charSetString = matcher.group();
         }
         //若默认字符集与真实的不一致，则重新解码
-        if (!"".equals(charSetString) && !Charset.defaultCharset().equals(Charset.forName(charSetString))) {
+        if (charSetString != null && !"".equals(charSetString)
+                && !Charset.defaultCharset().equals(Charset.forName(charSetString))) {
             result = convertToString(data, charSetString);
         }
         return result;

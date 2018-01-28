@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configurations>
+	
+	<connectionConfig>
+		<workingMode>REAL</workingMode>
+		<sendPort>6660</sendPort>
+		<receivePort>6661</receivePort>
+		<monitorIp>192.168.1.125</monitorIp>
+		<forwardIp>192.168.43.126</forwardIp>
+	</connectionConfig>
+	
+	<threadConfig>
+		<heartInterval>3000</heartInterval>
+		<forwardInterval>3000</forwardInterval>
+		<collectionInterval>1000</collectionInterval>
+		<statusChangeInterval>3000</statusChangeInterval>
+	</threadConfig>
+	
+</configurations>

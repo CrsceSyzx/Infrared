@@ -8,20 +8,13 @@
  */
 package com.syzx.infrared.domain;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.InputStreamReader;
 import java.util.List;
 
 import org.junit.Test;
 
-import com.syzx.infrared.domain.entities.JsonTopClass;
-import com.syzx.infrared.service.WebDataConverter;
-import com.syzx.infrared.service.WebDataTransceiver;
+import com.syzx.infrared.domain.entities.InfraredSourceData;
 
 /**
  * ClassName: JsonCodec <br/>
@@ -62,7 +55,7 @@ public class JsonCodecTest {
         int[] expectedInput=new int[] {38,65,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
         int[] expectedOutput=new int[] {43,52,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
         String jsonString="{\"status\": {\"cyclic\": {\"din\": [2,0],\"din_valid\": 0,\"din_comm\": 0,\"dout\": [2,0],\"dout_comm\": 0},\"config\": {\"ports\": [{\"iolconfig\": 4,\"inlen\": 2,\"outlen\": 0,\"comm\": 6,\"aux\": 0,\"logic_4\": false,\"logic_2\": false},{\"iolconfig\": 0,\"inlen\": 0,\"outlen\": 0,\"comm\": 0,\"aux\": 0,\"logic_4\": false,\"logic_2\": false},{\"iolconfig\": 0,\"inlen\": 0,\"outlen\": 0,\"comm\": 0,\"aux\": 0,\"logic_4\": false,\"logic_2\": false},{\"iolconfig\": 0,\"inlen\": 0,\"outlen\": 0,\"comm\": 0,\"aux\": 0,\"logic_4\": false,\"logic_2\": false},{\"iolconfig\": 0,\"inlen\": 0,\"outlen\": 0,\"comm\": 0,\"aux\": 0,\"logic_4\": false,\"logic_2\": false},{\"iolconfig\": 0,\"inlen\": 0,\"outlen\": 0,\"comm\": 0,\"aux\": 0,\"logic_4\": false,\"logic_2\": false},{\"iolconfig\": 0,\"inlen\": 0,\"outlen\": 0,\"comm\": 0,\"aux\": 0,\"logic_4\": false,\"logic_2\": false},{\"iolconfig\": 0,\"inlen\": 0,\"outlen\": 0,\"comm\": 0,\"aux\": 0,\"logic_4\": false,\"logic_2\": false}],\"mappingMode\": 0},\"dia\": {\"device\": [{\"state\": 3,\"type\": 1,\"code\": 17,\"alarm\": 17,\"iol_eventcode\": 64,\"iol_eventqual\": 0,\"iol_channel\": 0}],\"master\": [],\"ports\": [false,false,false,false,false,false,false,false]},\"leds\": {\"ports\": [{\"iol\": 1,\"dia\": 0},{\"iol\": 0,\"dia\": 0},{\"iol\": 0,\"dia\": 0},{\"iol\": 0,\"dia\": 0},{\"iol\": 0,\"dia\": 0},{\"iol\": 0,\"dia\": 0},{\"iol\": 0,\"dia\": 0},{\"iol\": 0,\"dia\": 0}],\"ua_green\": 0,\"ua_red\": 0,\"us_green\": 1,\"bfms_green\": 1,\"bfms_red\": 0,\"dians_green\": 4,\"dians_red\": 0,\"p1\": 1,\"p2\": 0},\"rotarys\": [5,2,1],\"forcing\": {\"forceon\": true,\"forcelock\": false,\"port_forced\": [true,false,false,false,false,false,false,false],\"force_do\": [0,0],\"mask_do\": [0,0],\"force_di\": [0,0],\"mask_di\": [0,0]},\"bus_on\": false,\"type\": 17},\"iol\": {\"port\": 1,\"vendor_id\": 0,\"device_id\": 0,\"serial\": [],\"data\": {\"in_valid\": false,\"input\": [38,65,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"output\": [43,52,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},\"dia\": []}}";
-        JsonTopClass jsonTopClass=JsonCodec.toObject(jsonString);
+        InfraredSourceData jsonTopClass=JsonCodec.toInfraredSourceData(jsonString);
         jsonTopClass.getIol().getData().getOutput().toArray(new Integer[0]);
 //        byte[] aa=new WebDataTransceiver().ReceiveData("http://www.guibuyu.org/0_899/");
 //        String bb=new WebDataConverter().convertToString(aa);

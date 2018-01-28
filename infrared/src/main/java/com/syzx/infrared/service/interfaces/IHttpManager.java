@@ -8,11 +8,8 @@
  */
 package com.syzx.infrared.service.interfaces;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-
 /**
- * ClassName: IDataTransceiver <br/>
+ * ClassName: IHttpManager <br/>
  * Function: 数据收发器. <br/>
  * date: 2017年12月7日 下午4:30:28 <br/>
  *
@@ -20,6 +17,6 @@ import java.net.MalformedURLException;
  * @version 
  * @since JDK 1.8
  */
-public interface IDataTransceiver {
-    public byte[] ReceiveData(String url) throws MalformedURLException, IOException;
+public interface IHttpManager {
+    public String httpGet(String url);
 }
